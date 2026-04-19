@@ -1,0 +1,230 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useCart } from "@/context/CartContext";
+import CartDrawer from "./CartDrawer";
+import { Grip } from "lucide-react";
+
+export default function Header() {
+  const { cart, cartOpen, setCartOpen } = useCart();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const totalQuantity = cart?.totalQuantity ?? 0;
+
+  return (
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out flex justify-center ${
+          scrolled ? "pt-4 px-4" : "pt-0 px-0"
+        }`}
+      >
+        <div className="flex w-full justify-center relative items-center gap-2">
+          <div
+            className={`flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              scrolled
+                ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8" 
+                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
+            }`}
+          >
+            <nav
+              className={`hidden items-center transition-all duration-500 md:flex ${
+                scrolled ? "w-1/3 gap-5" : "w-1/3 gap-8"
+              }`}
+            >
+              <Link
+                href="/"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[11px]" : "text-[12px]"
+                }`}
+              >
+                What we test
+              </Link>
+              <Link
+                href="/collections"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[11px]" : "text-[12px]"
+                }`}
+              >
+                How it works
+              </Link>
+              <Link
+                href="/search"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[11px]" : "text-[12px]"
+                }`}
+              >
+                FAQs
+              </Link>
+            </nav>
+
+            <div
+              className={`flex justify-center transition-all duration-500 ${
+                scrolled ? "absolute left-1/2 -translate-x-1/2 -mt-1" : "w-1/3 -mt-1"
+              }`}
+            >
+              <Link
+                href="/"
+                className="flex items-center justify-center transition-all duration-500"
+              >
+                <Image
+                  src="/logo.png"
+                  alt="Revivex"
+                  width={scrolled ? 100 : 130}
+                  height={scrolled ? 20 : 26}
+                  className="object-contain"
+                  priority
+                />
+              </Link>
+            </div>
+
+            <div
+              className={`flex items-center justify-end transition-all duration-500 ${
+                scrolled ? "w-1/3 gap-4" : "w-1/3 gap-6"
+              }`}
+            >
+              <Link
+                href="/"
+                className={`hidden md:block font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[11px]" : "text-[12px]"
+                }`}
+              >
+                Log in
+              </Link>
+
+              <Link
+                href="/"
+                className={`hidden md:block rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
+                  scrolled ? "px-4 py-2 text-[11px]" : "px-5 py-2 text-[12px]"
+                }`}
+              >
+                Become a member
+              </Link>
+
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 md:hidden text-white"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  )}
+                </svg>
+              </button>
+
+              {!scrolled && (
+                <button
+                  onClick={() => setCartOpen(true)}
+                  className="relative hidden md:flex text-white hover:text-white/80 transition-colors ml-4"
+                  aria-label="Open cart"
+                >
+                  <Grip className="h-5 w-5" />
+                  {totalQuantity > 0 && (
+                    <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
+                      {totalQuantity}
+                    </span>
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {scrolled && (
+            <div className="hidden md:flex flex-shrink-0 ml-1">
+              <button
+                onClick={() => setCartOpen(true)}
+                className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
+                aria-label="Open cart"
+              >
+                <Grip className="h-4 w-4" />
+                {totalQuantity > 0 && (
+                  <span className="absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
+                    {totalQuantity}
+                  </span>
+                )}
+              </button>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {mobileMenuOpen && (
+        <nav className="fixed inset-x-0 top-[88px] z-40 border-t border-white/10 bg-[#0A0A0A] px-6 py-4 shadow-lg md:hidden">
+          <div className="flex flex-col gap-4">
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-white"
+            >
+              What we test
+            </Link>
+            <Link
+              href="/collections"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-white"
+            >
+              How it works
+            </Link>
+            <Link
+              href="/search"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-white"
+            >
+              FAQs
+            </Link>
+            <div className="my-2 h-px bg-white/10" />
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-white"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full rounded-full bg-white py-3 text-center text-sm font-semibold text-black"
+            >
+              Become a member
+            </Link>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setCartOpen(true);
+              }}
+              className="w-full rounded-full border border-white py-3 text-center text-sm font-semibold text-white"
+            >
+              Cart ({totalQuantity})
+            </button>
+          </div>
+        </nav>
+      )}
+
+      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+    </>
+  );
+}
