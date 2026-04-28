@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { shopifyFetch } from "@/lib/shopify";
 import { COLLECTION_BY_HANDLE_QUERY } from "@/lib/queries";

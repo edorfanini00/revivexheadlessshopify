@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { shopifyFetch } from "@/lib/shopify";
 import { SEARCH_PRODUCTS_QUERY } from "@/lib/queries";
 import type { Product } from "@/lib/types";
