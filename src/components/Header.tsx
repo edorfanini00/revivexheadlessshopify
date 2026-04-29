@@ -61,7 +61,7 @@ export default function Header() {
             >
               <Link
                 href="/"
-                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                className={`whitespace-nowrap font-medium text-white transition-colors hover:text-white/80 ${
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
@@ -69,7 +69,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/collections"
-                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                className={`whitespace-nowrap font-medium text-white transition-colors hover:text-white/80 ${
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
@@ -77,7 +77,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/search"
-                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                className={`whitespace-nowrap font-medium text-white transition-colors hover:text-white/80 ${
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Header() {
             >
               <Link
                 href="/"
-                className={`hidden lg:block font-medium text-white transition-colors hover:text-white/80 ${
+                className={`hidden lg:block whitespace-nowrap font-medium text-white transition-colors hover:text-white/80 ${
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
@@ -101,7 +101,7 @@ export default function Header() {
 
               <Link
                 href="/"
-                className={`rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
+                className={`whitespace-nowrap rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
                   scrolled ? "px-4 py-2 text-[12px]" : "px-5 py-2.5 text-[14px]"
                 }`}
               >
