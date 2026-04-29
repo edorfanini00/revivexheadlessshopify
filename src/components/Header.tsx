@@ -33,8 +33,8 @@ export default function Header() {
           <div
             className={`flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
-                ? "h-[64px] w-full max-w-[1000px] rounded-full bg-black/70 backdrop-blur-xl shadow-2xl shadow-black/20 border border-white/10 px-8"
-                : "h-[100px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
+                ? "h-[68px] w-full max-w-[1060px] rounded-full bg-black/70 backdrop-blur-xl shadow-2xl shadow-black/20 border border-white/10 px-8"
+                : "h-[110px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
             }`}
           >
             {/* Left nav */}
@@ -46,7 +46,7 @@ export default function Header() {
               <Link
                 href="/"
                 className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[14px]" : "text-[16px]"
+                  scrolled ? "text-[15px]" : "text-[18px]"
                 }`}
               >
                 What we test
@@ -54,7 +54,7 @@ export default function Header() {
               <Link
                 href="/collections"
                 className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[14px]" : "text-[16px]"
+                  scrolled ? "text-[15px]" : "text-[18px]"
                 }`}
               >
                 How it works
@@ -62,7 +62,7 @@ export default function Header() {
               <Link
                 href="/search"
                 className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[14px]" : "text-[16px]"
+                  scrolled ? "text-[15px]" : "text-[18px]"
                 }`}
               >
                 FAQs
@@ -82,10 +82,10 @@ export default function Header() {
                 <Image
                   src="/logo.png"
                   alt="Revivex"
-                  width={220}
-                  height={70}
+                  width={250}
+                  height={80}
                   className={`object-contain transition-all duration-500 ${
-                    scrolled ? "h-[32px] w-auto" : "h-[60px] w-auto"
+                    scrolled ? "h-[34px] w-auto" : "h-[70px] w-auto"
                   }`}
                   priority
                 />
@@ -101,7 +101,7 @@ export default function Header() {
               <Link
                 href="/"
                 className={`hidden md:block font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[14px]" : "text-[16px]"
+                  scrolled ? "text-[15px]" : "text-[18px]"
                 }`}
               >
                 Log in
@@ -110,7 +110,7 @@ export default function Header() {
               <Link
                 href="/"
                 className={`hidden md:block rounded-full font-bold bg-white text-black whitespace-nowrap transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] ${
-                  scrolled ? "px-5 py-2 text-[13px]" : "px-6 py-2.5 text-[15px]"
+                  scrolled ? "px-5 py-2 text-[14px]" : "px-7 py-3 text-[16px]"
                 }`}
               >
                 Become a member
@@ -162,7 +162,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="fixed inset-x-0 top-[100px] z-40 bg-black/90 backdrop-blur-xl px-6 py-6 shadow-2xl md:hidden border-t border-white/10">
+        <nav className="fixed inset-x-0 top-[110px] z-40 bg-black/90 backdrop-blur-xl px-6 py-6 shadow-2xl md:hidden border-t border-white/10">
           <div className="flex flex-col gap-5">
             <Link
               href="/"
