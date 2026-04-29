@@ -30,6 +30,23 @@ export default function Header() {
         }`}
       >
         <div className="flex w-full justify-center relative items-center gap-2">
+          {/* Logo — fixed to viewport center, outside the pill */}
+          <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-auto">
+            <Link
+              href="/"
+              className="flex items-center justify-center"
+            >
+              <Image
+                src="/logo.png"
+                alt="Revivex"
+                width={200}
+                height={66}
+                className="object-contain h-[38px] w-auto"
+                priority
+              />
+            </Link>
+          </div>
+
           <div
             className={`flex items-center justify-between ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
@@ -39,7 +56,7 @@ export default function Header() {
           >
             <nav
               className={`hidden items-center md:flex ${
-                scrolled ? "w-1/3 gap-5 justify-end transition-all duration-700" : "w-1/3 gap-8 justify-end pr-16 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-5 justify-end pr-24 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-24 transition-all duration-[1500ms]"
               }`}
             >
               <Link
@@ -69,26 +86,8 @@ export default function Header() {
             </nav>
 
             <div
-              className={`flex justify-center w-1/3 ${scrolled ? "transition-all duration-700" : "transition-all duration-[1500ms]"}`}
-            >
-              <Link
-                href="/"
-                className="flex items-center justify-center transition-all duration-700"
-              >
-                <Image
-                  src="/logo.png"
-                  alt="Revivex"
-                  width={200}
-                  height={66}
-                  className="object-contain h-[38px] w-auto"
-                  priority
-                />
-              </Link>
-            </div>
-
-            <div
               className={`flex items-center ${
-                scrolled ? "w-1/3 gap-4 justify-start transition-all duration-700" : "w-1/3 gap-6 justify-start pl-16 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-4 justify-start pl-24 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-24 transition-all duration-[1500ms]"
               }`}
             >
               <Link
