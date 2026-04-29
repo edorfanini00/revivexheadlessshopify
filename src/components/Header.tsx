@@ -56,7 +56,7 @@ export default function Header() {
           >
             <nav
               className={`hidden items-center md:flex ${
-                scrolled ? "w-1/2 gap-5 justify-end pr-48 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-48 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-5 justify-end pr-64 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-64 transition-all duration-[1500ms]"
               }`}
             >
               <Link
@@ -87,7 +87,7 @@ export default function Header() {
 
             <div
               className={`flex items-center ${
-                scrolled ? "w-1/2 gap-4 justify-start pl-48 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-48 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-4 justify-start pl-64 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-64 transition-all duration-[1500ms]"
               }`}
             >
               <Link
