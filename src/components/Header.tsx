@@ -50,13 +50,13 @@ export default function Header() {
           <div
             className={`flex items-center justify-between ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
-                ? "h-[52px] w-full max-w-[900px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8 transition-all duration-700" 
+                ? "h-[52px] w-full max-w-[1060px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8 transition-all duration-700" 
                 : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12 transition-all duration-[1500ms]"
             }`}
           >
             <nav
               className={`hidden items-center md:flex ${
-                scrolled ? "w-1/2 gap-5 justify-end pr-20 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-64 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-5 justify-end pr-32 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-64 transition-all duration-[1500ms]"
               }`}
             >
               <Link
@@ -87,7 +87,7 @@ export default function Header() {
 
             <div
               className={`flex items-center ${
-                scrolled ? "w-1/2 gap-4 justify-start pl-20 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-64 transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-4 justify-start pl-32 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-64 transition-all duration-[1500ms]"
               }`}
             >
               <Link
