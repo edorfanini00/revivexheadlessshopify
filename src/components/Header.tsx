@@ -31,15 +31,15 @@ export default function Header() {
       >
         <div className="flex w-full justify-center relative items-center gap-2">
           <div
-            className={`flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`flex items-center justify-between ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
-                ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8" 
-                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
+                ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8 transition-all duration-700" 
+                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12 transition-all duration-1000"
             }`}
           >
             <nav
-              className={`hidden items-center transition-all duration-700 md:flex ${
-                scrolled ? "w-1/3 gap-5 justify-end" : "w-1/3 gap-8 justify-end pr-10"
+              className={`hidden items-center md:flex ${
+                scrolled ? "w-1/3 gap-5 justify-end transition-all duration-700" : "w-1/3 gap-8 justify-end pr-16 transition-all duration-1000"
               }`}
             >
               <Link
@@ -69,7 +69,7 @@ export default function Header() {
             </nav>
 
             <div
-              className="flex justify-center w-1/3 transition-all duration-700"
+              className={`flex justify-center w-1/3 ${scrolled ? "transition-all duration-700" : "transition-all duration-1000"}`}
             >
               <Link
                 href="/"
@@ -80,8 +80,8 @@ export default function Header() {
                   alt="Revivex"
                   width={200}
                   height={66}
-                  className={`object-contain transition-all duration-700 ${
-                    scrolled ? "h-[24px] w-auto" : "h-[50px] w-auto"
+                  className={`object-contain ${
+                    scrolled ? "h-[24px] w-auto transition-all duration-700" : "h-[50px] w-auto transition-all duration-1000"
                   }`}
                   priority
                 />
@@ -89,8 +89,8 @@ export default function Header() {
             </div>
 
             <div
-              className={`flex items-center transition-all duration-700 ${
-                scrolled ? "w-1/3 gap-4 justify-start" : "w-1/3 gap-6 justify-start pl-10"
+              className={`flex items-center ${
+                scrolled ? "w-1/3 gap-4 justify-start transition-all duration-700" : "w-1/3 gap-6 justify-start pl-16 transition-all duration-1000"
               }`}
             >
               <Link
