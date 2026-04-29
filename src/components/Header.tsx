@@ -155,7 +155,7 @@ export default function Header() {
             <div className="hidden md:flex flex-shrink-0 ml-1">
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
+                className="relative flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
                 aria-label="Open cart"
               >
                 <Grip className="h-7 w-7" />
