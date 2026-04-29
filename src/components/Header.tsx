@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useCart } from "@/context/CartContext";
 import CartDrawer from "./CartDrawer";
-import { ShoppingBag } from "lucide-react";
+import { Grip } from "lucide-react";
 
 export default function Header() {
   const { cart, cartOpen, setCartOpen } = useCart();
@@ -25,54 +25,52 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center ${
-          scrolled ? "pt-3 px-4" : "pt-0 px-0"
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out flex justify-center ${
+          scrolled ? "pt-4 px-4" : "pt-0 px-0"
         }`}
       >
         <div className="flex w-full justify-center relative items-center gap-2">
           <div
             className={`flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
-                ? "h-[68px] w-full max-w-[1060px] rounded-full bg-black/70 backdrop-blur-xl shadow-2xl shadow-black/20 border border-white/10 px-8"
-                : "h-[110px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
+                ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8" 
+                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
             }`}
           >
-            {/* Left nav */}
             <nav
               className={`hidden items-center transition-all duration-500 md:flex ${
-                scrolled ? "gap-5" : "w-1/3 gap-8"
+                scrolled ? "w-1/3 gap-5" : "w-1/3 gap-8"
               }`}
             >
               <Link
                 href="/"
-                className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[15px]" : "text-[18px]"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
                 What we test
               </Link>
               <Link
                 href="/collections"
-                className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[15px]" : "text-[18px]"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
                 How it works
               </Link>
               <Link
                 href="/search"
-                className={`font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[15px]" : "text-[18px]"
+                className={`font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
                 FAQs
               </Link>
             </nav>
 
-            {/* Center logo */}
             <div
               className={`flex justify-center transition-all duration-500 ${
-                scrolled ? "flex-1 mx-6" : "w-1/3"
+                scrolled ? "absolute left-1/2 -translate-x-1/2 -mt-1" : "w-1/3 -mt-1"
               }`}
             >
               <Link
@@ -82,26 +80,25 @@ export default function Header() {
                 <Image
                   src="/logo.png"
                   alt="Revivex"
-                  width={250}
-                  height={80}
+                  width={200}
+                  height={66}
                   className={`object-contain transition-all duration-500 ${
-                    scrolled ? "h-[34px] w-auto" : "h-[70px] w-auto"
+                    scrolled ? "h-[24px] w-auto" : "h-[50px] w-auto"
                   }`}
                   priority
                 />
               </Link>
             </div>
 
-            {/* Right actions */}
             <div
               className={`flex items-center justify-end transition-all duration-500 ${
-                scrolled ? "gap-4" : "w-1/3 gap-6"
+                scrolled ? "w-1/3 gap-4" : "w-1/3 gap-6"
               }`}
             >
               <Link
                 href="/"
-                className={`hidden md:block font-semibold text-white whitespace-nowrap transition-all duration-300 hover:text-white/80 ${
-                  scrolled ? "text-[15px]" : "text-[18px]"
+                className={`hidden md:block font-medium text-white transition-colors hover:text-white/80 ${
+                  scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
                 Log in
@@ -109,14 +106,13 @@ export default function Header() {
 
               <Link
                 href="/"
-                className={`hidden md:block rounded-full font-bold bg-white text-black whitespace-nowrap transition-all duration-300 hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] ${
-                  scrolled ? "px-5 py-2 text-[14px]" : "px-7 py-3 text-[16px]"
+                className={`hidden md:block rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
+                  scrolled ? "px-4 py-2 text-[12px]" : "px-5 py-2.5 text-[14px]"
                 }`}
               >
                 Become a member
               </Link>
 
-              {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 md:hidden text-white"
@@ -142,61 +138,78 @@ export default function Header() {
                 </svg>
               </button>
 
-              {/* Cart button */}
+              {!scrolled && (
+                <button
+                  onClick={() => setCartOpen(true)}
+                  className="relative hidden md:flex text-white hover:text-white/80 transition-colors ml-4"
+                  aria-label="Open cart"
+                >
+                  <Grip className="h-5 w-5" />
+                  {totalQuantity > 0 && (
+                    <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
+                      {totalQuantity}
+                    </span>
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {scrolled && (
+            <div className="hidden md:flex flex-shrink-0 ml-1">
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative hidden md:flex text-white hover:text-white/80 transition-all duration-300 ml-1"
+                className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
                 aria-label="Open cart"
               >
-                <ShoppingBag className={scrolled ? "h-[18px] w-[18px]" : "h-5 w-5"} />
+                <Grip className="h-4 w-4" />
                 {totalQuantity > 0 && (
-                  <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[9px] font-bold text-black">
+                  <span className="absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
                     {totalQuantity}
                   </span>
                 )}
               </button>
             </div>
-          </div>
+          )}
         </div>
       </header>
 
-      {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="fixed inset-x-0 top-[110px] z-40 bg-black/90 backdrop-blur-xl px-6 py-6 shadow-2xl md:hidden border-t border-white/10">
-          <div className="flex flex-col gap-5">
+        <nav className="fixed inset-x-0 top-[88px] z-40 border-t border-white/10 bg-[#0A0A0A] px-6 py-4 shadow-lg md:hidden">
+          <div className="flex flex-col gap-4">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[17px] font-semibold text-white"
+              className="text-sm font-medium text-white"
             >
               What we test
             </Link>
             <Link
               href="/collections"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[17px] font-semibold text-white"
+              className="text-sm font-medium text-white"
             >
               How it works
             </Link>
             <Link
               href="/search"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[17px] font-semibold text-white"
+              className="text-sm font-medium text-white"
             >
               FAQs
             </Link>
-            <div className="my-1 h-px bg-white/10" />
+            <div className="my-2 h-px bg-white/10" />
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[17px] font-semibold text-white"
+              className="text-sm font-medium text-white"
             >
               Log in
             </Link>
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full rounded-full bg-white py-3.5 text-center text-[16px] font-bold text-black"
+              className="w-full rounded-full bg-white py-3 text-center text-sm font-semibold text-black"
             >
               Become a member
             </Link>
@@ -205,7 +218,7 @@ export default function Header() {
                 setMobileMenuOpen(false);
                 setCartOpen(true);
               }}
-              className="w-full rounded-full border border-white/20 py-3.5 text-center text-[16px] font-semibold text-white"
+              className="w-full rounded-full border border-white py-3 text-center text-sm font-semibold text-white"
             >
               Cart ({totalQuantity})
             </button>
