@@ -82,7 +82,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="absolute bottom-14 left-10 lg:left-20 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-white">
+          <div className="absolute bottom-14 left-10 lg:left-20 hidden sm:flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-white">
             <div className="flex flex-col gap-0.5 pr-6 sm:pr-8 sm:border-r border-white/10">
               <h3 className="text-[15px] font-semibold tracking-tight">Whole body check</h3>
               <p className="text-[13px] font-medium text-white/70 tracking-tight">Detect 1,000+ conditions</p>
