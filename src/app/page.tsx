@@ -47,7 +47,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent pointer-events-none" />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col px-10 lg:px-20 w-full max-w-[1600px] mx-auto">
+        <div className="relative z-10 flex-1 flex flex-col px-6 lg:px-20 w-full max-w-[1600px] mx-auto">
           
           <div className="h-[88px]" />
 

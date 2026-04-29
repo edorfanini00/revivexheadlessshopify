@@ -30,8 +30,8 @@ export default function Header() {
         }`}
       >
         <div className="flex w-full justify-center relative items-center gap-2">
-          {/* Logo — fixed to viewport center, outside the pill */}
-          <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-auto">
+          {/* Logo — left on mobile, centered on desktop */}
+          <div className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 z-10 pointer-events-auto">
             <Link
               href="/"
               className="flex items-center justify-center"
@@ -113,24 +113,7 @@ export default function Header() {
                 className="p-2 lg:hidden text-white"
                 aria-label="Toggle menu"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                  )}
-                </svg>
+                <Grip className="h-7 w-7" />
               </button>
 
               {!scrolled && (
