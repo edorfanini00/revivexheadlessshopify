@@ -51,7 +51,7 @@ export default async function HomePage() {
           
           <div className="h-[88px]" />
 
-          <div className="flex-1 flex flex-col justify-center max-w-[650px] pb-32 pt-6">
+          <div className="flex-1 flex flex-col justify-center max-w-[650px] pb-44 pt-6">
             <div className="flex items-center gap-2 text-[11px] font-semibold text-white mb-4 tracking-wide">
               <Check className="h-[12px] w-[12px]" strokeWidth={3} />
               <span>HSA/ FSA eligible</span>
