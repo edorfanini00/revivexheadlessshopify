@@ -34,12 +34,12 @@ export default function Header() {
             className={`flex items-center justify-between ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
                 ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8 transition-all duration-700" 
-                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12 transition-all duration-1000"
+                : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12 transition-all duration-[1500ms]"
             }`}
           >
             <nav
               className={`hidden items-center md:flex ${
-                scrolled ? "w-1/3 gap-5 justify-end transition-all duration-700" : "w-1/3 gap-8 justify-end pr-16 transition-all duration-1000"
+                scrolled ? "w-1/3 gap-5 justify-end transition-all duration-700" : "w-1/3 gap-8 justify-end pr-16 transition-all duration-[1500ms]"
               }`}
             >
               <Link
@@ -69,7 +69,7 @@ export default function Header() {
             </nav>
 
             <div
-              className={`flex justify-center w-1/3 ${scrolled ? "transition-all duration-700" : "transition-all duration-1000"}`}
+              className={`flex justify-center w-1/3 ${scrolled ? "transition-all duration-700" : "transition-all duration-[1500ms]"}`}
             >
               <Link
                 href="/"
@@ -81,7 +81,7 @@ export default function Header() {
                   width={200}
                   height={66}
                   className={`object-contain ${
-                    scrolled ? "h-[24px] w-auto transition-all duration-700" : "h-[50px] w-auto transition-all duration-1000"
+                    scrolled ? "h-[28px] w-auto transition-all duration-700" : "h-[42px] w-auto transition-all duration-[1500ms]"
                   }`}
                   priority
                 />
@@ -90,7 +90,7 @@ export default function Header() {
 
             <div
               className={`flex items-center ${
-                scrolled ? "w-1/3 gap-4 justify-start transition-all duration-700" : "w-1/3 gap-6 justify-start pl-16 transition-all duration-1000"
+                scrolled ? "w-1/3 gap-4 justify-start transition-all duration-700" : "w-1/3 gap-6 justify-start pl-16 transition-all duration-[1500ms]"
               }`}
             >
               <Link
@@ -157,10 +157,10 @@ export default function Header() {
             <div className="hidden md:flex flex-shrink-0 ml-1">
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
+                className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
                 aria-label="Open cart"
               >
-                <Grip className="h-4 w-4" />
+                <Grip className="h-5 w-5" />
                 {totalQuantity > 0 && (
                   <span className="absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
                     {totalQuantity}
