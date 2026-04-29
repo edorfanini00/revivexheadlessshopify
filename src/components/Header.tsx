@@ -80,9 +80,7 @@ export default function Header() {
                   alt="Revivex"
                   width={200}
                   height={66}
-                  className={`object-contain ${
-                    scrolled ? "h-[28px] w-auto transition-all duration-700" : "h-[42px] w-auto transition-all duration-[1500ms]"
-                  }`}
+                  className="object-contain h-[28px] w-auto"
                   priority
                 />
               </Link>
@@ -157,10 +155,10 @@ export default function Header() {
             <div className="hidden md:flex flex-shrink-0 ml-1">
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
+                className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
                 aria-label="Open cart"
               >
-                <Grip className="h-5 w-5" />
+                <Grip className="h-6 w-6" />
                 {totalQuantity > 0 && (
                   <span className="absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
                     {totalQuantity}
