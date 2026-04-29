@@ -140,7 +140,7 @@ export default function Header() {
                   className="relative hidden md:flex text-white hover:text-white/80 transition-colors ml-4"
                   aria-label="Open cart"
                 >
-                  <Grip className="h-5 w-5" />
+                  <Grip className="h-8 w-8" />
                   {totalQuantity > 0 && (
                     <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[9px] font-bold text-white">
                       {totalQuantity}
