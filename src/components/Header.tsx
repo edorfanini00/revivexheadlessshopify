@@ -101,25 +101,19 @@ export default function Header() {
 
               <Link
                 href="/"
-                className={`whitespace-nowrap rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
+                className={`hidden md:block whitespace-nowrap rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
                   scrolled ? "px-4 py-2 text-[12px]" : "px-5 py-2.5 text-[14px]"
                 }`}
               >
                 Become a member
               </Link>
 
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 lg:hidden text-white"
-                aria-label="Toggle menu"
-              >
-                <Grip className="h-7 w-7" />
-              </button>
+
 
               {!scrolled && (
                 <button
                   onClick={() => setCartOpen(true)}
-                  className="relative hidden lg:flex text-white hover:text-white/80 transition-colors ml-4"
+                  className="relative flex text-white hover:text-white/80 transition-colors ml-4"
                   aria-label="Open cart"
                 >
                   <Grip className="h-8 w-8" />
