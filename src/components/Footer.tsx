@@ -11,8 +11,8 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Revivex"
-                width={120}
-                height={24}
+                width={160}
+                height={50}
                 className="object-contain invert"
               />
             </Link>

@@ -38,9 +38,11 @@ export default async function HomePage() {
             loop
             muted
             playsInline
+            preload="auto"
+            poster="/hero-bg.png"
             className="absolute inset-0 h-full w-full object-cover object-center"
           >
-            <source src="https://ik.imagekit.io/kusosheutk/0428.mp4" type="video/mp4" />
+            <source src="/hero-video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent pointer-events-none" />
         </div>
