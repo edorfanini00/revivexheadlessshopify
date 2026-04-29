@@ -55,7 +55,7 @@ export default function Header() {
             }`}
           >
             <nav
-              className={`hidden items-center md:flex ${
+              className={`hidden items-center lg:flex ${
                 scrolled ? "w-1/2 gap-7 justify-start pr-16 transition-all duration-700" : "w-1/2 gap-8 justify-end pr-64 transition-all duration-[1500ms]"
               }`}
             >
@@ -86,13 +86,13 @@ export default function Header() {
             </nav>
 
             <div
-              className={`flex items-center ${
-                scrolled ? "w-1/2 gap-5 justify-end pl-16 transition-all duration-700" : "w-1/2 gap-6 justify-start pl-64 transition-all duration-[1500ms]"
+              className={`flex items-center ml-auto lg:ml-0 ${
+                scrolled ? "lg:w-1/2 gap-5 justify-end pl-16 transition-all duration-700" : "lg:w-1/2 gap-6 justify-end lg:justify-start pl-0 lg:pl-64 transition-all duration-[1500ms]"
               }`}
             >
               <Link
                 href="/"
-                className={`hidden md:block font-medium text-white transition-colors hover:text-white/80 ${
+                className={`hidden lg:block font-medium text-white transition-colors hover:text-white/80 ${
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
@@ -101,7 +101,7 @@ export default function Header() {
 
               <Link
                 href="/"
-                className={`hidden md:block rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
+                className={`rounded-full font-semibold bg-white text-black transition-colors hover:bg-white/90 ${
                   scrolled ? "px-4 py-2 text-[12px]" : "px-5 py-2.5 text-[14px]"
                 }`}
               >
@@ -110,7 +110,7 @@ export default function Header() {
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 md:hidden text-white"
+                className="p-2 lg:hidden text-white"
                 aria-label="Toggle menu"
               >
                 <svg
@@ -136,7 +136,7 @@ export default function Header() {
               {!scrolled && (
                 <button
                   onClick={() => setCartOpen(true)}
-                  className="relative hidden md:flex text-white hover:text-white/80 transition-colors ml-4"
+                  className="relative hidden lg:flex text-white hover:text-white/80 transition-colors ml-4"
                   aria-label="Open cart"
                 >
                   <Grip className="h-8 w-8" />
@@ -151,7 +151,7 @@ export default function Header() {
           </div>
 
           {scrolled && (
-            <div className="hidden md:flex flex-shrink-0 ml-1">
+            <div className="flex flex-shrink-0 ml-1">
               <button
                 onClick={() => setCartOpen(true)}
                 className="relative flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#525252] shadow-xl text-white transition-colors hover:bg-[#626262]"
