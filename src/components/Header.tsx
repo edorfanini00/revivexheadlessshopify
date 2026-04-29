@@ -80,7 +80,7 @@ export default function Header() {
                   alt="Revivex"
                   width={200}
                   height={66}
-                  className="object-contain h-[28px] w-auto"
+                  className="object-contain h-[38px] w-auto"
                   priority
                 />
               </Link>
