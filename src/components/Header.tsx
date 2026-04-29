@@ -31,14 +31,14 @@ export default function Header() {
       >
         <div className="flex w-full justify-center relative items-center gap-2">
           <div
-            className={`flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               scrolled
                 ? "h-[52px] w-full max-w-[800px] rounded-full bg-[#525252] shadow-xl pr-2 pl-8" 
                 : "h-[88px] w-full max-w-[1600px] bg-transparent px-8 lg:px-12"
             }`}
           >
             <nav
-              className={`hidden items-center justify-end transition-all duration-500 md:flex ${
+              className={`hidden items-center justify-end transition-all duration-700 md:flex ${
                 scrolled ? "w-1/3 gap-5" : "w-1/3 gap-8"
               }`}
             >
@@ -69,20 +69,18 @@ export default function Header() {
             </nav>
 
             <div
-              className={`flex justify-center transition-all duration-500 ${
-                scrolled ? "absolute left-1/2 -translate-x-1/2 -mt-1" : "w-1/3 -mt-1"
-              }`}
+              className="flex justify-center w-1/3 -mt-1 transition-all duration-700"
             >
               <Link
                 href="/"
-                className="flex items-center justify-center transition-all duration-500"
+                className="flex items-center justify-center transition-all duration-700"
               >
                 <Image
                   src="/logo.png"
                   alt="Revivex"
                   width={200}
                   height={66}
-                  className={`object-contain transition-all duration-500 ${
+                  className={`object-contain transition-all duration-700 ${
                     scrolled ? "h-[24px] w-auto" : "h-[50px] w-auto"
                   }`}
                   priority
@@ -91,7 +89,7 @@ export default function Header() {
             </div>
 
             <div
-              className={`flex items-center justify-start transition-all duration-500 ${
+              className={`flex items-center justify-start transition-all duration-700 ${
                 scrolled ? "w-1/3 gap-4" : "w-1/3 gap-6"
               }`}
             >
