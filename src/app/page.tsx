@@ -77,7 +77,7 @@ export default async function HomePage() {
                 href="/search"
                 className="rounded-full bg-white/10 border border-white/20 px-6 py-2.5 text-[13px] font-semibold text-white/90 backdrop-blur-md transition-colors hover:bg-white/20"
               >
-                See what we test
+                Shop now
               </Link>
             </div>
           </div>
