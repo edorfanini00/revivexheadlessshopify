@@ -65,7 +65,7 @@ export default function Header() {
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
-                What we test
+                Shop
               </Link>
               <Link
                 href="/collections"
@@ -73,7 +73,7 @@ export default function Header() {
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
-                How it works
+                Science
               </Link>
               <Link
                 href="/search"
@@ -81,7 +81,7 @@ export default function Header() {
                   scrolled ? "text-[12px]" : "text-[15px]"
                 }`}
               >
-                FAQs
+                Learn
               </Link>
             </nav>
 
