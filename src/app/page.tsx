@@ -62,8 +62,7 @@ export default async function HomePage() {
             </h1>
 
             <p className="text-[14px] sm:text-[15px] text-white/90 leading-[1.6] font-medium mb-8 max-w-[460px]">
-              100+ biomarkers. A plan built around you.<br/>
-              Everything you need to act on it.
+              A smarter health system. Built as one. Evolving with you.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
