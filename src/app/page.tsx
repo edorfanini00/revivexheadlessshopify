@@ -58,7 +58,7 @@ export default async function HomePage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-medium leading-[1.05] tracking-[-0.03em] mb-4 text-white">
-              Get better at being <br /> healthy, every year
+              Personalized health. <br /> Based on your biology.
             </h1>
 
             <p className="text-[14px] sm:text-[15px] text-white/90 leading-[1.6] font-medium mb-8 max-w-[460px]">
