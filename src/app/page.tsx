@@ -83,16 +83,16 @@ export default async function HomePage() {
 
           <div className="absolute bottom-14 left-10 lg:left-20 hidden sm:flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-white">
             <div className="flex flex-col gap-0.5 pr-6 sm:pr-8 sm:border-r border-white/10">
-              <h3 className="text-[15px] font-semibold tracking-tight">Whole body check</h3>
-              <p className="text-[13px] font-medium text-white/70 tracking-tight">Detect 1,000+ conditions</p>
+              <h3 className="text-[15px] font-semibold tracking-tight">Understand your biology</h3>
+              <p className="text-[13px] font-medium text-white/70 tracking-tight">Through advanced biomarker and diagnostic testing.</p>
             </div>
             <div className="flex flex-col gap-0.5 pr-6 sm:pr-8 sm:border-r border-white/10">
-              <h3 className="text-[15px] font-semibold tracking-tight">Accessible</h3>
-              <p className="text-[13px] font-medium text-white/70 tracking-tight">Starts at $199/year</p>
+              <h3 className="text-[15px] font-semibold tracking-tight">Connect the full picture</h3>
+              <p className="text-[13px] font-medium text-white/70 tracking-tight">With a system that continuously interprets your data.</p>
             </div>
             <div className="flex flex-col gap-0.5">
-              <h3 className="text-[15px] font-semibold tracking-tight">Trusted</h3>
-              <p className="text-[13px] font-medium text-white/70 tracking-tight">1M biomarkers tested</p>
+              <h3 className="text-[15px] font-semibold tracking-tight">Support what matters</h3>
+              <p className="text-[13px] font-medium text-white/70 tracking-tight">With targeted solutions aligned to your needs.</p>
             </div>
           </div>
         </div>
