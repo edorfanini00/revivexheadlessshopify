@@ -56,7 +56,7 @@ export default function Header() {
           >
             <nav
               className={`hidden items-center lg:flex ${
-                scrolled ? "w-1/2 gap-7 justify-start pr-8 transition-all duration-700" : "w-1/2 gap-8 justify-start transition-all duration-[1500ms]"
+                scrolled ? "w-1/2 gap-7 justify-start pr-8 transition-all duration-700" : "w-1/2 gap-8 justify-start pl-10 transition-all duration-[1500ms]"
               }`}
             >
               <Link
