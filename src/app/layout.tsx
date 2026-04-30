@@ -26,7 +26,7 @@ export default function RootLayout({
       lang="en"
       className={`${font.variable} antialiased`}
     >
-      <body className="font-sans bg-white p-[6px] min-h-screen">
+      <body className="font-sans bg-white p-0 sm:p-[6px] min-h-screen">
         <div className="relative flex flex-col min-h-[calc(100vh-12px)] rounded-[10px] bg-white overflow-hidden">
           <CartProvider>
             <Header />

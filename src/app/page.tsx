@@ -31,7 +31,7 @@ export default async function HomePage() {
     <div className="relative flex-1 flex flex-col">
       
       {/* --- HERO SECTION --- */}
-      <div className="relative min-h-[calc(100vh-12px)] flex flex-col rounded-[10px] overflow-hidden">
+      <div className="relative min-h-screen sm:min-h-[calc(100vh-12px)] flex flex-col rounded-none sm:rounded-[10px] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -47,11 +47,11 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent pointer-events-none" />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col px-0 sm:px-6 lg:px-20 w-full max-w-[1600px] mx-auto">
+        <div className="relative z-10 flex-1 flex flex-col px-6 sm:px-6 lg:px-20 w-full max-w-[1600px] mx-auto">
           
           <div className="h-[88px]" />
 
-          <div className="flex-1 flex flex-col justify-center max-w-[650px] pb-6 sm:pb-44 pt-6">
+          <div className="flex-1 flex flex-col justify-center max-w-[650px] pb-10 sm:pb-44 pt-6">
             <div className="flex items-center gap-2 text-[11px] font-semibold text-white mb-4 tracking-wide">
               <Check className="h-[12px] w-[12px]" strokeWidth={3} />
               <span>HSA/ FSA eligible</span>
