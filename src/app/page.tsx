@@ -185,16 +185,18 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
             {/* LEFT — High intent: Start with Testing */}
-            <Link
-              href="/collections"
-              className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#0A0A0A] p-10 sm:p-14 min-h-[480px] transition-transform duration-300 hover:scale-[1.01]"
+            <div
+              className="relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#0A0A0A] p-10 sm:p-14 min-h-[480px] cursor-default"
             >
               {/* Subtle radial glow */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(180,160,130,0.18)_0%,_transparent_65%)]" />
 
               <div className="relative z-10 flex flex-col gap-8">
                 <div>
-                  <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/40 mb-3">High intent</p>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-[11px] font-semibold tracking-[0.12em] uppercase text-white/50 mb-4">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    Coming Soon
+                  </span>
                   <h2 className="text-[38px] sm:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white">
                     Start with<br />Testing
                   </h2>
@@ -214,14 +216,12 @@ export default async function HomePage() {
               </div>
 
               <div className="relative z-10 mt-10 flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13px] font-bold text-black transition-colors group-hover:bg-white/90">
-                  Get your test kit
-                  <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 16 16">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-6 py-3 text-[13px] font-semibold text-white/40 cursor-default select-none">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  Coming soon
                 </span>
               </div>
-            </Link>
+            </div>
 
             {/* RIGHT — Lower friction: Shop Revivex */}
             <Link
