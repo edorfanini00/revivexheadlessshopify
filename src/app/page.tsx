@@ -158,118 +158,88 @@ export default async function HomePage() {
         </section>
       </div>
 
-      {/* --- HOW IT WORKS SECTION --- */}
+      {/* --- SPLIT CTA SECTION --- */}
       <div className="relative z-20 bg-white">
-        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
-          {/* Header */}
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#0A0A0A]">
-              How it works
-            </h2>
-            <p className="mt-3 text-[15px] text-black/50 font-medium">
-              It starts with understanding your body, then so much more.
-            </p>
-          </div>
+        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-10 border-t border-black/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* LEFT — High intent: Start with Testing */}
+            <Link
+              href="/collections"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#0A0A0A] p-10 sm:p-14 min-h-[480px] transition-transform duration-300 hover:scale-[1.01]"
+            >
+              {/* Subtle radial glow */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(180,160,130,0.18)_0%,_transparent_65%)]" />
 
-            {/* Step 1 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#f0ede8]">
-                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
-                  1
+              <div className="relative z-10 flex flex-col gap-8">
+                <div>
+                  <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/40 mb-3">High intent</p>
+                  <h2 className="text-[38px] sm:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white">
+                    Start with<br />Testing
+                  </h2>
+                  <p className="mt-4 text-[14px] text-white/50 leading-[1.7] max-w-[340px]">
+                    Understand exactly what your body needs. Your biology, decoded.
+                  </p>
+                </div>
+
+                {/* Tag pills */}
+                <div className="flex flex-wrap gap-2">
+                  {["Labs", "Biomarkers", "App", "Protocol", "Personalization"].map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/15 px-3.5 py-1 text-[12px] font-medium text-white/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-10 flex items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13px] font-bold text-black transition-colors group-hover:bg-white/90">
+                  Get your test kit
+                  <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 16 16">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
-                <img
-                  src="/how-it-works-1.jpg"
-                  alt="Get your baseline test"
-                  className="h-full w-full object-cover"
-                />
-                {/* Fallback gradient card when no image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4c9bb] to-[#b8a99a] -z-10" />
               </div>
-              <div>
-                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
-                  Test your baseline
-                </h3>
-                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
-                  One simple at-home test to measure 100+ biomarkers unique to
-                  your biology.
-                </p>
-              </div>
-            </div>
+            </Link>
 
-            {/* Step 2 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#eef0f5]">
-                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
-                  2
-                </span>
-                <img
-                  src="/how-it-works-2.jpg"
-                  alt="Results explained"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c8d0e0] to-[#a9b5cc] -z-10" />
-              </div>
-              <div>
-                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
-                  Results explained
-                </h3>
-                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
-                  Get a complete picture of your health data in one clear,
-                  secure location.
-                </p>
-              </div>
-            </div>
+            {/* RIGHT — Lower friction: Shop Revivex */}
+            <Link
+              href="/search"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#F4F1EC] p-10 sm:p-14 min-h-[480px] transition-transform duration-300 hover:scale-[1.01]"
+            >
+              {/* Subtle radial glow */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(180,155,120,0.22)_0%,_transparent_65%)]" />
 
-            {/* Step 3 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#e8f0ec]">
-                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
-                  3
-                </span>
-                <img
-                  src="/how-it-works-3.jpg"
-                  alt="Build your protocol"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#b8ccbf] to-[#9ab5a5] -z-10" />
-              </div>
-              <div>
-                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
-                  Build your protocol
-                </h3>
-                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
-                  Revivex builds an evidence-backed supplement plan informed by
-                  your data. You stay in control.
-                </p>
-              </div>
-            </div>
+              <div className="relative z-10 flex flex-col gap-8">
+                <div>
+                  <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/35 mb-3">Lower friction</p>
+                  <h2 className="text-[38px] sm:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-[#0A0A0A]">
+                    Shop<br />Revivex
+                  </h2>
+                  <p className="mt-4 text-[14px] text-black/50 leading-[1.7] max-w-[340px]">
+                    Targeted supplements and wellness products built for real results.
+                  </p>
+                </div>
 
-            {/* Step 4 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#f5ede8]">
-                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
-                  4
+                {/* Tag pills */}
+                <div className="flex flex-wrap gap-2">
+                  {["Supplements", "Bracelets", "Wellness", "Recovery", "Products"].map((tag) => (
+                    <span key={tag} className="rounded-full border border-black/15 px-3.5 py-1 text-[12px] font-medium text-black/50">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-10 flex items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#0A0A0A] px-6 py-3 text-[13px] font-bold text-white transition-colors group-hover:bg-black/80">
+                  Browse products
+                  <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 16 16">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
-                <img
-                  src="/how-it-works-4.jpg"
-                  alt="Access everything"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#e0b89a] to-[#c49070] -z-10" />
               </div>
-              <div>
-                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
-                  Access everything
-                </h3>
-                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
-                  Shop your personalized products, track your progress, and
-                  retest. Your health, always evolving.
-                </p>
-              </div>
-            </div>
+            </Link>
 
           </div>
         </section>
