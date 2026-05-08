@@ -122,8 +122,29 @@ export default async function HomePage() {
               </p>
             </div>
 
+            {/* Doctor profile cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-2">
+              {[
+                { img: "/doctor-1.jpg", name: "Dr. James Mercer", title: "Chief Medical Officer", spec: "Endocrinology · Stanford" },
+                { img: "/doctor-2.jpg", name: "Dr. Sarah Jenkins", title: "Head of Research", spec: "Internal Medicine · Harvard" },
+                { img: "/doctor-3.jpg", name: "Dr. Akin Adeyemi", title: "Lead Scientist", spec: "Metabolic Health · UCSF" },
+                { img: "/doctor-4.jpg", name: "Dr. Anya Lin", title: "Research Scientist", spec: "Biomarker Science · Oxford" },
+              ].map((doc) => (
+                <div key={doc.name} className="flex flex-col items-center text-center gap-3 p-5 rounded-[18px] bg-[#F7F5F2] border border-black/5">
+                  <div className="h-20 w-20 rounded-full overflow-hidden ring-4 ring-white shadow-md flex-shrink-0">
+                    <img src={doc.img} alt={doc.name} className="h-full w-full object-cover object-top" />
+                  </div>
+                  <div>
+                    <p className="text-[13px] font-semibold text-[#0A0A0A] tracking-tight">{doc.name}</p>
+                    <p className="text-[11px] font-medium text-black/40 mt-0.5">{doc.title}</p>
+                    <p className="text-[11px] text-black/30 mt-1">{doc.spec}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             {/* Institution logos (text-based, muted) */}
-            <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
+            <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16 mt-2">
               <span className="text-[22px] font-light tracking-[-0.02em] text-black/25 font-serif">
                 Stanford
               </span>
