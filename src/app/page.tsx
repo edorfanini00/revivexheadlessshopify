@@ -81,18 +81,18 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="absolute bottom-28 left-10 lg:left-20 hidden sm:flex flex-col sm:flex-row items-center gap-8 sm:gap-12 text-white">
-            <div className="flex flex-col gap-1 pr-8 sm:pr-12 sm:border-r border-white/20">
-              <h3 className="text-[18px] font-semibold tracking-tight">Understand your biology</h3>
-              <p className="text-[14px] font-medium text-white/70 tracking-tight">Through advanced biomarker and diagnostic testing.</p>
+          <div className="absolute bottom-44 left-10 lg:left-20 hidden sm:flex flex-col sm:flex-row items-center gap-8 sm:gap-12 text-white">
+            <div className="flex flex-col gap-1.5 pr-8 sm:pr-12 sm:border-r border-white/20">
+              <h3 className="text-[22px] font-semibold tracking-tight">Understand your biology</h3>
+              <p className="text-[15px] font-medium text-white/70 tracking-tight">Through advanced biomarker and diagnostic testing.</p>
             </div>
-            <div className="flex flex-col gap-1 pr-8 sm:pr-12 sm:border-r border-white/20">
-              <h3 className="text-[18px] font-semibold tracking-tight">Connect the full picture</h3>
-              <p className="text-[14px] font-medium text-white/70 tracking-tight">With a system that continuously interprets your data.</p>
+            <div className="flex flex-col gap-1.5 pr-8 sm:pr-12 sm:border-r border-white/20">
+              <h3 className="text-[22px] font-semibold tracking-tight">Connect the full picture</h3>
+              <p className="text-[15px] font-medium text-white/70 tracking-tight">With a system that continuously interprets your data.</p>
             </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[18px] font-semibold tracking-tight">Support what matters</h3>
-              <p className="text-[14px] font-medium text-white/70 tracking-tight">With targeted solutions aligned to your needs.</p>
+            <div className="flex flex-col gap-1.5">
+              <h3 className="text-[22px] font-semibold tracking-tight">Support what matters</h3>
+              <p className="text-[15px] font-medium text-white/70 tracking-tight">With targeted solutions aligned to your needs.</p>
             </div>
           </div>
         </div>
