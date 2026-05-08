@@ -98,6 +98,66 @@ export default async function HomePage() {
         </div>
       </div>
 
+      {/* --- TRUST / SOCIAL PROOF BAR --- */}
+      <div className="relative z-20 bg-white">
+        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-14 border-t border-black/10">
+
+          {/* Avatars + tagline */}
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex items-center gap-3">
+              {/* Overlapping avatar circles */}
+              <div className="flex -space-x-3">
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#c9b99a] to-[#a89278] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white">
+                  <img src="/advisor-1.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                </div>
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#8fafc4] to-[#6a90ab] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white z-10">
+                  <img src="/advisor-2.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                </div>
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#b5c4a1] to-[#8ea47a] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white z-20">
+                  <img src="/advisor-3.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                </div>
+              </div>
+              <p className="text-[15px] font-medium text-[#0A0A0A] tracking-tight">
+                Built by the world&apos;s top doctors and scientists
+              </p>
+            </div>
+
+            {/* Institution logos (text-based, muted) */}
+            <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
+              <span className="text-[22px] font-light tracking-[-0.02em] text-black/25 font-serif">
+                Stanford
+              </span>
+              <div className="flex items-center gap-2 opacity-25">
+                <svg viewBox="0 0 48 48" className="h-7 w-7" fill="none">
+                  <rect x="2" y="2" width="44" height="44" rx="4" stroke="currentColor" strokeWidth="2.5" className="text-black"/>
+                  <path d="M14 34V14h8a8 8 0 010 16h-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-black"/>
+                </svg>
+                <div className="flex flex-col leading-none">
+                  <span className="text-[11px] font-bold tracking-[0.08em] text-black uppercase">Harvard</span>
+                  <span className="text-[9px] font-medium tracking-[0.06em] text-black/70 uppercase">Medical School</span>
+                </div>
+              </div>
+              <div className="flex items-baseline gap-[1px] opacity-25">
+                <span className="text-[26px] font-bold tracking-tight text-black">UC</span>
+                <span className="text-[26px] font-light tracking-tight text-black">SF</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-25">
+                <svg viewBox="0 0 40 40" className="h-7 w-7" fill="none">
+                  <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="2" className="text-black"/>
+                  <path d="M20 8c6.627 0 12 5.373 12 12S26.627 32 20 32 8 26.627 8 20 13.373 8 20 8z" stroke="currentColor" strokeWidth="1.5" className="text-black"/>
+                  <path d="M14 20h12M20 14v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-black"/>
+                </svg>
+                <div className="flex flex-col leading-none">
+                  <span className="text-[8px] font-medium tracking-[0.1em] text-black uppercase">University of</span>
+                  <span className="text-[13px] font-bold tracking-[0.05em] text-black uppercase">Oxford</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
       {/* --- HOW IT WORKS SECTION --- */}
       <div className="relative z-20 bg-white">
         <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
