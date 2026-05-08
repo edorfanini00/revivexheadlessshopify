@@ -98,6 +98,139 @@ export default async function HomePage() {
         </div>
       </div>
 
+      {/* --- HOW IT WORKS SECTION --- */}
+      <div className="relative z-20 bg-white">
+        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[#0A0A0A]">
+              How it works
+            </h2>
+            <p className="mt-3 text-[15px] text-black/50 font-medium">
+              It starts with understanding your body, then so much more.
+            </p>
+          </div>
+
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* Step 1 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#f0ede8]">
+                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
+                  1
+                </span>
+                <img
+                  src="/how-it-works-1.jpg"
+                  alt="Get your baseline test"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    t.style.display = "none";
+                  }}
+                />
+                {/* Fallback gradient card when no image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d4c9bb] to-[#b8a99a] -z-10" />
+              </div>
+              <div>
+                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
+                  Test your baseline
+                </h3>
+                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
+                  One simple at-home test to measure 100+ biomarkers unique to
+                  your biology.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#eef0f5]">
+                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
+                  2
+                </span>
+                <img
+                  src="/how-it-works-2.jpg"
+                  alt="Results explained"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    t.style.display = "none";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c8d0e0] to-[#a9b5cc] -z-10" />
+              </div>
+              <div>
+                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
+                  Results explained
+                </h3>
+                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
+                  Get a complete picture of your health data in one clear,
+                  secure location.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#e8f0ec]">
+                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
+                  3
+                </span>
+                <img
+                  src="/how-it-works-3.jpg"
+                  alt="Build your protocol"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    t.style.display = "none";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#b8ccbf] to-[#9ab5a5] -z-10" />
+              </div>
+              <div>
+                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
+                  Build your protocol
+                </h3>
+                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
+                  Revivex builds an evidence-backed supplement plan informed by
+                  your data. You stay in control.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative h-[300px] sm:h-[340px] rounded-[20px] overflow-hidden bg-[#f5ede8]">
+                <span className="absolute top-4 left-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm text-[12px] font-bold text-black shadow-sm">
+                  4
+                </span>
+                <img
+                  src="/how-it-works-4.jpg"
+                  alt="Access everything"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    t.style.display = "none";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#e0b89a] to-[#c49070] -z-10" />
+              </div>
+              <div>
+                <h3 className="text-[16px] font-semibold text-[#0A0A0A] tracking-tight">
+                  Access everything
+                </h3>
+                <p className="mt-1.5 text-[13px] text-black/50 leading-[1.6]">
+                  Shop your personalized products, track your progress, and
+                  retest. Your health, always evolving.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
       {/* --- STORE CONTENT SECTIONS (WHITE BACKGROUND) --- */}
       <div className="relative z-20 bg-white">
         {collections.length > 0 && (
