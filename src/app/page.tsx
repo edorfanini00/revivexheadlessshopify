@@ -124,10 +124,6 @@ export default async function HomePage() {
                   src="/how-it-works-1.jpg"
                   alt="Get your baseline test"
                   className="h-full w-full object-cover"
-                  onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement;
-                    t.style.display = "none";
-                  }}
                 />
                 {/* Fallback gradient card when no image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d4c9bb] to-[#b8a99a] -z-10" />
@@ -153,10 +149,6 @@ export default async function HomePage() {
                   src="/how-it-works-2.jpg"
                   alt="Results explained"
                   className="h-full w-full object-cover"
-                  onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement;
-                    t.style.display = "none";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#c8d0e0] to-[#a9b5cc] -z-10" />
               </div>
@@ -181,10 +173,6 @@ export default async function HomePage() {
                   src="/how-it-works-3.jpg"
                   alt="Build your protocol"
                   className="h-full w-full object-cover"
-                  onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement;
-                    t.style.display = "none";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#b8ccbf] to-[#9ab5a5] -z-10" />
               </div>
@@ -209,10 +197,6 @@ export default async function HomePage() {
                   src="/how-it-works-4.jpg"
                   alt="Access everything"
                   className="h-full w-full object-cover"
-                  onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement;
-                    t.style.display = "none";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#e0b89a] to-[#c49070] -z-10" />
               </div>
