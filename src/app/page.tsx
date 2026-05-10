@@ -246,52 +246,7 @@ export default async function HomePage() {
           </div>
         </section>
       </div>
-
-
-      {/* --- SHOP BY CATEGORY --- */}
-      <div className="relative z-20 bg-white">
-        {collections.length > 0 && (
-          <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
-            <div className="flex items-end justify-between">
-              <h2 className="text-3xl font-medium tracking-tight text-[#0A0A0A]">Shop by Category</h2>
-              <Link
-                href="/collections"
-                className="text-sm font-semibold text-black/50 hover:text-black"
-              >
-                View All &rarr;
-              </Link>
-            </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {collections.map((collection) => (
-                <Link
-                  key={collection.id}
-                  href={`/collections/${collection.handle}`}
-                  className="group relative flex h-80 items-end overflow-hidden rounded-[20px] bg-black/5 p-8 border border-black/10 transition-colors hover:border-black/20"
-                >
-                  {collection.image && (
-                    <img
-                      src={collection.image.url}
-                      alt={collection.image.altText ?? collection.title}
-                      className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-semibold text-white">
-                      {collection.title}
-                    </h3>
-                    {collection.description && (
-                      <p className="mt-2 text-[14px] text-white/70 line-clamp-2">
-                        {collection.description}
-                      </p>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-      </div>
     </div>
+
   );
 }

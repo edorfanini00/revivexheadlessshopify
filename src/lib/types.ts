@@ -24,6 +24,8 @@ export interface Product {
   handle: string;
   description: string;
   descriptionHtml?: string;
+  productType?: string;
+  tags?: string[];
   priceRange: {
     minVariantPrice: Money;
     maxVariantPrice?: Money;

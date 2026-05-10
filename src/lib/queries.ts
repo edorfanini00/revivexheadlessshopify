@@ -7,6 +7,8 @@ export const PRODUCTS_QUERY = `
           title
           handle
           description
+          productType
+          tags
           priceRange {
             minVariantPrice {
               amount
@@ -103,6 +105,54 @@ export const COLLECTIONS_QUERY = `
             altText
             width
             height
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const COLLECTIONS_WITH_PRODUCTS_QUERY = `
+  query CollectionsWithProducts($first: Int!) {
+    collections(first: $first) {
+      edges {
+        node {
+          id
+          title
+          handle
+          description
+          products(first: 50) {
+            edges {
+              node {
+                id
+                title
+                handle
+                description
+                priceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+                images(first: 1) {
+                  edges {
+                    node {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+                variants(first: 1) {
+                  edges {
+                    node {
+                      id
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

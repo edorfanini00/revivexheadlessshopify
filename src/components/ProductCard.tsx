@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <div className="group flex flex-col">
       <Link
         href={`/products/${product.handle}`}
-        className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-black/5 border border-black/10 transition-colors hover:border-black/20"
+        className="relative aspect-[4/5] overflow-hidden rounded-[16px] bg-black/5 border border-black/10 transition-colors hover:border-black/20"
       >
         {image ? (
           <Image
@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
             alt={image.altText ?? product.title}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+            sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
           />
         ) : (
           <div className="flex h-full items-center justify-center text-black/40">
@@ -32,13 +32,13 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
       </Link>
 
-      <div className="mt-5 flex flex-col gap-1.5 px-1">
+      <div className="mt-3 flex flex-col gap-1 px-0.5">
         <Link href={`/products/${product.handle}`}>
-          <h3 className="text-[16px] font-semibold text-[#0A0A0A] group-hover:text-black/70 transition-colors">
+          <h3 className="text-[13px] font-semibold text-[#0A0A0A] group-hover:text-black/70 transition-colors leading-snug">
             {product.title}
           </h3>
         </Link>
-        <p className="text-[15px] font-medium text-black/50">
+        <p className="text-[12px] font-medium text-black/50">
           {formatPrice(product.priceRange.minVariantPrice)}
         </p>
       </div>
@@ -47,7 +47,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <button
           onClick={() => addToCart(variantId)}
           disabled={loading}
-          className="mt-4 rounded-full bg-[#0A0A0A] px-4 py-3 text-[14px] font-semibold text-white transition-all hover:bg-black/80 active:scale-[0.98] disabled:opacity-50"
+          className="mt-3 rounded-full bg-[#0A0A0A] px-3 py-2 text-[12px] font-semibold text-white transition-all hover:bg-black/80 active:scale-[0.98] disabled:opacity-50"
         >
           Add to Cart
         </button>
