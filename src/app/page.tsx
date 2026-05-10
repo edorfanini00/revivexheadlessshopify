@@ -107,14 +107,14 @@ export default async function HomePage() {
             <div className="flex items-center gap-3">
               {/* Overlapping avatar circles */}
               <div className="flex -space-x-3">
-                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#c9b99a] to-[#a89278] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white">
-                  <img src="/advisor-1.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden ring-2 ring-white">
+                  <img src="/doctor-1.jpg" alt="Dr. James Mercer" className="h-full w-full object-cover object-top" />
                 </div>
-                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#8fafc4] to-[#6a90ab] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white z-10">
-                  <img src="/advisor-2.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden ring-2 ring-white z-10">
+                  <img src="/doctor-2.jpg" alt="Dr. Sarah Jenkins" className="h-full w-full object-cover object-top" />
                 </div>
-                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-[#b5c4a1] to-[#8ea47a] flex items-center justify-center text-white text-[11px] font-bold ring-2 ring-white z-20">
-                  <img src="/advisor-3.jpg" alt="Advisor" className="h-full w-full object-cover" />
+                <div className="h-10 w-10 rounded-full border-2 border-white overflow-hidden ring-2 ring-white z-20">
+                  <img src="/doctor-3.jpg" alt="Dr. Akin Adeyemi" className="h-full w-full object-cover object-top" />
                 </div>
               </div>
               <p className="text-[15px] font-medium text-[#0A0A0A] tracking-tight">
@@ -122,26 +122,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            {/* Doctor profile cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-2">
-              {[
-                { img: "/doctor-1.jpg", name: "Dr. James Mercer", title: "Chief Medical Officer", spec: "Endocrinology · Stanford" },
-                { img: "/doctor-2.jpg", name: "Dr. Sarah Jenkins", title: "Head of Research", spec: "Internal Medicine · Harvard" },
-                { img: "/doctor-3.jpg", name: "Dr. Akin Adeyemi", title: "Lead Scientist", spec: "Metabolic Health · UCSF" },
-                { img: "/doctor-4.jpg", name: "Dr. Anya Lin", title: "Research Scientist", spec: "Biomarker Science · Oxford" },
-              ].map((doc) => (
-                <div key={doc.name} className="flex flex-col items-center text-center gap-3 p-5 rounded-[18px] bg-[#F7F5F2] border border-black/5">
-                  <div className="h-20 w-20 rounded-full overflow-hidden ring-4 ring-white shadow-md flex-shrink-0">
-                    <img src={doc.img} alt={doc.name} className="h-full w-full object-cover object-top" />
-                  </div>
-                  <div>
-                    <p className="text-[13px] font-semibold text-[#0A0A0A] tracking-tight">{doc.name}</p>
-                    <p className="text-[11px] font-medium text-black/40 mt-0.5">{doc.title}</p>
-                    <p className="text-[11px] text-black/30 mt-1">{doc.spec}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+
 
             {/* Institution logos (text-based, muted) */}
             <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16 mt-2">
@@ -186,10 +167,12 @@ export default async function HomePage() {
 
             {/* LEFT — High intent: Start with Testing */}
             <div
-              className="relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#0A0A0A] p-10 sm:p-14 min-h-[480px] cursor-default"
+              className="relative flex flex-col justify-between overflow-hidden rounded-[24px] p-10 sm:p-14 min-h-[480px] cursor-default"
             >
-              {/* Subtle radial glow */}
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(180,160,130,0.18)_0%,_transparent_65%)]" />
+              {/* Background photo */}
+              <img src="https://ik.imagekit.io/kusosheutk/hf_20260508_021901_7a55cf6e-3e5e-47de-9984-19b66ba4a807.jpg" alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+              {/* Dark overlay for legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
 
               <div className="relative z-10 flex flex-col gap-8">
                 <div>
@@ -215,29 +198,27 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="relative z-10 mt-10 flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-6 py-3 text-[13px] font-semibold text-white/40 cursor-default select-none">
-                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-                  Coming soon
-                </span>
-              </div>
+
+
             </div>
 
             {/* RIGHT — Lower friction: Shop Revivex */}
             <Link
               href="/search"
-              className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#F4F1EC] p-10 sm:p-14 min-h-[480px] transition-transform duration-300 hover:scale-[1.01]"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] p-10 sm:p-14 min-h-[480px] transition-transform duration-300 hover:scale-[1.01]"
             >
-              {/* Subtle radial glow */}
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(180,155,120,0.22)_0%,_transparent_65%)]" />
+              {/* Background photo */}
+              <img src="https://ik.imagekit.io/kusosheutk/hf_20260510_155445_bc3484b3-43fb-4c0f-b92b-86065ff132a5.jpg" alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
 
               <div className="relative z-10 flex flex-col gap-8">
                 <div>
-                  <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/35 mb-3">Lower friction</p>
-                  <h2 className="text-[38px] sm:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-[#0A0A0A]">
+                  <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/40 mb-3">Shop</p>
+                  <h2 className="text-[38px] sm:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white">
                     Shop<br />Revivex
                   </h2>
-                  <p className="mt-4 text-[14px] text-black/50 leading-[1.7] max-w-[340px]">
+                  <p className="mt-4 text-[14px] text-white/60 leading-[1.7] max-w-[340px]">
                     Targeted supplements and wellness products built for real results.
                   </p>
                 </div>
@@ -245,15 +226,15 @@ export default async function HomePage() {
                 {/* Tag pills */}
                 <div className="flex flex-wrap gap-2">
                   {["Supplements", "Bracelets", "Wellness", "Recovery", "Products"].map((tag) => (
-                    <span key={tag} className="rounded-full border border-black/15 px-3.5 py-1 text-[12px] font-medium text-black/50">
+                    <span key={tag} className="rounded-full border border-white/20 px-3.5 py-1 text-[12px] font-medium text-white/60">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="relative z-10 mt-10 flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#0A0A0A] px-6 py-3 text-[13px] font-bold text-white transition-colors group-hover:bg-black/80">
+              <div className="relative z-10 mt-10">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13px] font-bold text-black transition-colors group-hover:bg-white/90">
                   Browse products
                   <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 16 16">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -266,7 +247,8 @@ export default async function HomePage() {
         </section>
       </div>
 
-      {/* --- STORE CONTENT SECTIONS (WHITE BACKGROUND) --- */}
+
+      {/* --- SHOP BY CATEGORY --- */}
       <div className="relative z-20 bg-white">
         {collections.length > 0 && (
           <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
@@ -307,15 +289,6 @@ export default async function HomePage() {
                 </Link>
               ))}
             </div>
-          </section>
-        )}
-
-        {products.length > 0 && (
-          <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 pt-0">
-            <div className="flex items-end justify-between mb-10">
-              <h2 className="text-3xl font-medium tracking-tight text-[#0A0A0A]">Featured Products</h2>
-            </div>
-            <ProductGrid products={products} />
           </section>
         )}
       </div>

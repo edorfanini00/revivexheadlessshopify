@@ -1,59 +1,38 @@
 export const dynamic = "force-dynamic";
 
 import { shopifyFetch } from "@/lib/shopify";
-import { SEARCH_PRODUCTS_QUERY } from "@/lib/queries";
+import { PRODUCTS_QUERY } from "@/lib/queries";
 import type { Product } from "@/lib/types";
-import SearchForm from "@/components/SearchForm";
 import ProductGrid from "@/components/ProductGrid";
 
 export const metadata = {
-  title: "Search | Revivex",
-  description: "Search for Revivex products.",
+  title: "Shop | Revivex",
+  description: "Shop all Revivex products.",
 };
 
-async function searchProducts(query: string) {
-  if (!query) return [];
+async function getAllProducts() {
   const data = await shopifyFetch<{
-    search: { edges: { node: Product }[] };
-  }>({
-    query: SEARCH_PRODUCTS_QUERY,
-    variables: { query, first: 20 },
-  });
-  return data.search.edges.map((e) => e.node);
+    products: { edges: { node: Product }[] };
+  }>({ query: PRODUCTS_QUERY, variables: { first: 50 } });
+  return data.products.edges.map((e) => e.node);
 }
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string }>;
-}) {
-  const { q } = await searchParams;
-  const query = q ?? "";
-  const products = await searchProducts(query);
+export default async function SearchPage() {
+  const products = await getAllProducts();
 
   return (
     <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-32">
-      <h1 className="text-4xl sm:text-5xl font-medium tracking-tight text-white mb-10">
-        Search
+      <h1 className="text-4xl sm:text-5xl font-medium tracking-tight text-white mb-4">
+        Shop Revivex
       </h1>
+      <p className="text-[15px] text-white/40 mb-16">
+        {products.length} product{products.length !== 1 && "s"}
+      </p>
 
-      <div className="mb-16">
-        <SearchForm initialQuery={query} />
-      </div>
-
-      {query && (
-        <div className="mt-10">
-          <p className="mb-8 text-[16px] text-white/50">
-            {products.length} result{products.length !== 1 && "s"} for &ldquo;{query}&rdquo;
-          </p>
-          {products.length > 0 ? (
-            <ProductGrid products={products} />
-          ) : (
-            <p className="text-white/50">
-              No products found. Try a different search term.
-            </p>
-          )}
-        </div>
+      {products.length > 0 ? (
+        <ProductGrid products={products} />
+      ) : (
+        <p className="text-white/50">No products found.</p>
       )}
     </div>
   );
