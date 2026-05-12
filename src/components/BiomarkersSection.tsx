@@ -39,7 +39,7 @@ export default function BiomarkersSection() {
   return (
     <div ref={containerRef} style={{ height: scrollHeight }} className="relative bg-white pt-20 sm:pt-28">
       {/* Sticky inner panel */}
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center rounded-none sm:rounded-[10px]">
         {/* Full-bleed background image */}
         <img
           src="/images/biomarkers-hero.jpg"
