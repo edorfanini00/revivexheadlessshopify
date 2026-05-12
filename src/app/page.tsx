@@ -102,7 +102,7 @@ export default async function HomePage() {
 
       {/* --- TRUST / SOCIAL PROOF BAR --- */}
       <div className="relative z-20 bg-white">
-        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-14 border-t border-black/10">
+        <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 py-24 border-t border-black/10">
 
           {/* Avatars + tagline */}
           <div className="flex flex-col items-center gap-6">
