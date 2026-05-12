@@ -37,15 +37,19 @@ export default function BiomarkersSection() {
   const scrollHeight = `${(points.length + 1) * 100}vh`;
 
   return (
-    <div ref={containerRef} style={{ height: scrollHeight }} className="relative border-t border-black/10">
+    <div ref={containerRef} style={{ height: scrollHeight }} className="relative bg-white pt-20 sm:pt-28">
       {/* Sticky inner panel */}
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
-        {/* Full background image */}
-        <img
-          src="https://ik.imagekit.io/kusosheutk/New.jpeg"
-          alt=""
-          className="absolute inset-0 w-full h-full object-contain object-center"
-        />
+        {/* Image constrained to hero margins */}
+        <div className="absolute inset-0 mx-auto max-w-[1600px] px-5 sm:px-6 lg:px-10">
+          <div className="relative w-full h-full rounded-[24px] overflow-hidden">
+            <img
+              src="https://ik.imagekit.io/kusosheutk/New.jpeg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-contain object-center"
+            />
+          </div>
+        </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
