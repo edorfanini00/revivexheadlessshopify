@@ -39,8 +39,16 @@ export default function BiomarkersSection() {
   return (
     <div ref={containerRef} style={{ height: scrollHeight }} className="relative border-t border-black/10">
       {/* Sticky inner panel */}
-      <div className="sticky top-0 h-screen overflow-hidden bg-white flex items-center">
-        <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10">
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+        {/* Full background image */}
+        <img
+          src="https://ik.imagekit.io/kusosheutk/hf_20260512_200332_434c44d9-2875-4bd3-8b48-ff720877c7e6.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
             {/* LEFT — Numbered list, items reveal as you scroll */}
@@ -50,45 +58,38 @@ export default function BiomarkersSection() {
                 return (
                   <div
                     key={pt.number}
-                    className="flex items-start gap-5 border-t border-black/10 py-5 transition-all duration-500"
+                    className="flex items-start gap-5 border-t border-white/10 py-5 transition-all duration-500"
                     style={{
-                      opacity: isVisible ? 1 : 0.15,
+                      opacity: isVisible ? 1 : 0.2,
                       transform: isVisible ? "translateY(0)" : "translateY(10px)",
                     }}
                   >
-                    <span className="text-[11px] font-bold tracking-[0.15em] text-black/25 tabular-nums pt-0.5 flex-shrink-0 w-6">
+                    <span className="text-[11px] font-bold tracking-[0.15em] text-white/30 tabular-nums pt-0.5 flex-shrink-0 w-6">
                       {pt.number}
                     </span>
                     <div className="flex-1">
                       <h3
                         className="text-[15px] sm:text-[16px] font-semibold leading-snug mb-1 transition-colors duration-300"
-                        style={{ color: isVisible ? "#0A0A0A" : "rgba(10,10,10,0.3)" }}
+                        style={{ color: isVisible ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.3)" }}
                       >
                         {pt.title}
                       </h3>
-                      <p className="text-[13px] text-black/40 leading-[1.65]">{pt.desc}</p>
+                      <p className="text-[13px] text-white/45 leading-[1.65]">{pt.desc}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* RIGHT — Heading + image */}
+            {/* RIGHT — Heading */}
             <div className="order-1 lg:order-2">
-              <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-black/30 mb-4">Testing</p>
-              <h2 className="text-[28px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-[#0A0A0A] mb-5">
+              <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/35 mb-4">Testing</p>
+              <h2 className="text-[28px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-5">
                 Every Revivex journey starts with 100+ biomarkers
               </h2>
-              <p className="text-[13px] sm:text-[14px] text-black/45 leading-[1.75] max-w-[400px] mb-8">
+              <p className="text-[13px] sm:text-[14px] text-white/50 leading-[1.75] max-w-[400px]">
                 A full-body test with a quick 10-min lab draw. Understand your hormones, metabolic markers, nutrients, and more.
               </p>
-              <div className="relative w-full rounded-[18px] overflow-hidden bg-black/5" style={{ aspectRatio: "16/10" }}>
-                <img
-                  src="https://ik.imagekit.io/kusosheutk/hf_20260508_021901_7a55cf6e-3e5e-47de-9984-19b66ba4a807.jpg"
-                  alt="Revivex lab testing"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
             </div>
 
           </div>
