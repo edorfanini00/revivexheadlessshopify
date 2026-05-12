@@ -44,7 +44,7 @@ export default function BiomarkersSection() {
         <div className="absolute inset-0 mx-auto max-w-[1600px] px-5 sm:px-6 lg:px-10">
           <div className="relative w-full h-full rounded-[24px] overflow-hidden">
             <img
-              src="https://ik.imagekit.io/kusosheutk/New.jpeg"
+              src="/images/biomarkers-hero.jpg"
               alt=""
               className="absolute inset-0 w-full h-full object-contain object-center"
             />
