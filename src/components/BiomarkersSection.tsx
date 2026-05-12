@@ -46,7 +46,6 @@ export default function BiomarkersSection() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
