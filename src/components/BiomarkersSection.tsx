@@ -44,7 +44,7 @@ export default function BiomarkersSection() {
         <img
           src="https://ik.imagekit.io/kusosheutk/New.jpeg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-contain object-center"
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10">
