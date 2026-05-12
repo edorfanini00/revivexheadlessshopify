@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HomeCTA() {
   return (
     <div className="relative z-20 bg-white">
-      <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 pt-10 pb-24 border-t border-black/10">
+      <section className="mx-auto w-full max-w-[1600px] px-6 lg:px-10 pt-10 pb-40 border-t border-black/10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
           {/* LEFT — Start with Testing */}
