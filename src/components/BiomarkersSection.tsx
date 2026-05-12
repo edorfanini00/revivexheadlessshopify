@@ -42,7 +42,7 @@ export default function BiomarkersSection() {
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
         {/* Full background image */}
         <img
-          src="https://ik.imagekit.io/kusosheutk/hf_20260512_200332_434c44d9-2875-4bd3-8b48-ff720877c7e6.jpg"
+          src="https://ik.imagekit.io/kusosheutk/New.jpeg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
