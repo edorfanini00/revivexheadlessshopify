@@ -13,10 +13,10 @@ export default function BiomarkersSection() {
           <div className="pt-32 sm:pt-40 text-right max-w-[500px]">
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/35 mb-4">Testing</p>
             <h2 className="text-[28px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-5">
-              Every Revivex journey starts<br />with 100+ biomarkers
+              Beyond wellness.<br />Beyond healthcare.
             </h2>
             <p className="text-[13px] sm:text-[14px] text-white/50 leading-[1.75] ml-auto max-w-[400px]">
-              A full-body test with a quick 10-min lab draw. Understand your hormones, metabolic markers, nutrients, and more.
+              Revivex is building the next-generation health ecosystem — designed to help people better understand, support, and optimize how they feel through proactive wellness, personalized products, recovery systems, intelligent insights, and connected health experiences.
             </p>
           </div>
         </div>
