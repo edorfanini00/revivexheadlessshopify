@@ -10,7 +10,7 @@ export default function BiomarkersSection() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-start justify-end" style={{ minHeight: "90vh" }}>
-          <div className="pt-12 sm:pt-16 text-right max-w-[500px]">
+          <div className="pt-32 sm:pt-40 text-right max-w-[500px]">
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-white/35 mb-4">Testing</p>
             <h2 className="text-[28px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-5">
               Every Revivex journey starts<br />with 100+ biomarkers
