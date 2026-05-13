@@ -23,7 +23,7 @@ export default function BiomarkersSection() {
               Beyond wellness.<br />Beyond healthcare.
             </h2>
             <p className="text-[12px] sm:text-[14px] text-white/70 leading-[1.75] sm:ml-auto max-w-[340px] sm:max-w-[400px]">
-              Revivex is the next-generation health ecosystem designed to help you better understand, support, and optimize how you feel through proactive wellness, personalized products, recovery systems, intelligent insights, and connected health experiences.
+              A health ecosystem built to help you understand your body, optimize how you feel, and take control of your wellness through personalized products, intelligent insights, and connected experiences.
             </p>
           </div>
         </div>
