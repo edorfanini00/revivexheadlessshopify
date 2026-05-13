@@ -1,7 +1,8 @@
 export default function BiomarkersSection() {
   return (
     <div className="relative bg-white pt-12 sm:pt-28">
-      <div className="relative w-full overflow-hidden rounded-none sm:rounded-[10px]" style={{ minHeight: "100vh" }}>
+      {/* Sticky container — pins the image while you scroll, next section slides over */}
+      <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px]">
         {/* Full-bleed background image */}
         <img
           src="/images/biomarkers-hero.jpg"
@@ -11,10 +12,7 @@ export default function BiomarkersSection() {
         {/* Dark scrim — bottom on mobile, right on desktop */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent sm:bg-gradient-to-l sm:from-black/60 sm:via-black/20 sm:to-transparent" />
 
-        <div
-          className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end"
-          style={{ minHeight: "100vh" }}
-        >
+        <div className="absolute inset-0 z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end">
           <div className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px]">
             <h2
               className="text-[26px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-4 sm:mb-5"
@@ -28,6 +26,8 @@ export default function BiomarkersSection() {
           </div>
         </div>
       </div>
+      {/* Spacer so there's scroll distance while pinned */}
+      <div className="h-[50vh]" />
     </div>
   );
 }
