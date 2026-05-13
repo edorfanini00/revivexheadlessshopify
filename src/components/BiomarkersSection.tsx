@@ -1,7 +1,7 @@
 export default function BiomarkersSection() {
   return (
     <div className="relative bg-white pt-12 sm:pt-28">
-      <div className="relative w-full overflow-hidden rounded-none sm:rounded-[10px]" style={{ minHeight: "90vh" }}>
+      <div className="relative w-full overflow-hidden rounded-none sm:rounded-[10px]" style={{ minHeight: "100vh" }}>
         {/* Full-bleed background image */}
         <img
           src="/images/biomarkers-hero.jpg"
@@ -13,7 +13,7 @@ export default function BiomarkersSection() {
 
         <div
           className="relative z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end"
-          style={{ minHeight: "90vh" }}
+          style={{ minHeight: "100vh" }}
         >
           <div className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px]">
             <h2
