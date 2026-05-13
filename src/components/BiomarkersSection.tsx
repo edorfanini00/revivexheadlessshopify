@@ -80,10 +80,17 @@ export default function BiomarkersSection() {
               transition: slideTransition,
             }}
           >
+            {/* Card 1 — mobile image */}
+            <img
+              src="/images/biomarkers-hero-mobile.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover object-center sm:hidden"
+            />
+            {/* Card 1 — desktop image */}
             <img
               src="/images/biomarkers-hero.jpg"
               alt=""
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center hidden sm:block"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent sm:bg-gradient-to-l sm:from-black/60 sm:via-black/20 sm:to-transparent" />
 
