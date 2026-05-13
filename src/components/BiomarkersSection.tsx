@@ -9,9 +9,9 @@ export default function BiomarkersSection() {
   const lastShowSecond = useRef(false);
 
   useEffect(() => {
-    const LOCK_DISTANCE = 1500;
-    const TRIGGER_DOWN = 0.35;
-    const TRIGGER_UP = 0.25;
+    const LOCK_DISTANCE = 2000;
+    const TRIGGER_DOWN = 0.5;
+    const TRIGGER_UP = 0.35;
 
     const onScroll = () => {
       const el = sectionRef.current;
@@ -51,7 +51,7 @@ export default function BiomarkersSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const LOCK_DISTANCE = 1500;
+  const LOCK_DISTANCE = 2000;
   const slideTransition = "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
 
   return (
