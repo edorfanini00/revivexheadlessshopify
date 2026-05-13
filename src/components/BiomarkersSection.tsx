@@ -5,11 +5,12 @@ import { useRef, useEffect, useState } from "react";
 export default function BiomarkersSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState<"before" | "locked" | "after">("before");
-  const [showSecond, setShowSecond] = useState(false);
-  const [lockOffset, setLockOffset] = useState(0);
+  const [slideProgress, setSlideProgress] = useState(0); // 0 = card1 visible, 1 = card2 fully slid in
 
   useEffect(() => {
-    const LOCK_DISTANCE = 1500; // pixels of scroll while locked
+    const LOCK_DISTANCE = 1500;
+    const SLIDE_START = 0.4; // start sliding at 40%
+    const SLIDE_END = 0.75;  // fully slid in at 75%
 
     const onScroll = () => {
       const el = sectionRef.current;
@@ -19,19 +20,17 @@ export default function BiomarkersSection() {
       const scrollY = window.scrollY;
 
       if (scrollY < sectionTop) {
-        // Haven't reached the section yet
         setPhase("before");
-        setShowSecond(false);
+        setSlideProgress(0);
       } else if (scrollY < sectionTop + LOCK_DISTANCE) {
-        // Inside the locked zone
         setPhase("locked");
-        setLockOffset(sectionTop);
         const progress = (scrollY - sectionTop) / LOCK_DISTANCE;
-        setShowSecond(progress > 0.6);
+        // Map progress from SLIDE_START-SLIDE_END range to 0-1
+        const slide = Math.max(0, Math.min(1, (progress - SLIDE_START) / (SLIDE_END - SLIDE_START)));
+        setSlideProgress(slide);
       } else {
-        // Past the locked zone
         setPhase("after");
-        setShowSecond(true);
+        setSlideProgress(1);
       }
     };
 
@@ -40,7 +39,6 @@ export default function BiomarkersSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // The section needs enough height to allow scrolling while "locked"
   const LOCK_DISTANCE = 1500;
 
   return (
@@ -50,7 +48,6 @@ export default function BiomarkersSection() {
         style={{ height: `calc(100vh + ${LOCK_DISTANCE}px)` }}
         className="relative"
       >
-        {/* The visual frame */}
         <div
           className="w-full overflow-hidden rounded-none sm:rounded-[10px]"
           style={{
@@ -62,7 +59,7 @@ export default function BiomarkersSection() {
             zIndex: 30,
           }}
         >
-          {/* Card 1 */}
+          {/* Card 1 — base layer */}
           <img
             src="/images/biomarkers-hero.jpg"
             alt=""
@@ -72,8 +69,8 @@ export default function BiomarkersSection() {
 
           <div className="absolute inset-0 z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end">
             <div
-              className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px] transition-opacity duration-500"
-              style={{ opacity: showSecond ? 0 : 1 }}
+              className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px]"
+              style={{ opacity: 1 - slideProgress, transition: "opacity 0.15s" }}
             >
               <h2
                 className="text-[26px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-4 sm:mb-5"
@@ -87,10 +84,13 @@ export default function BiomarkersSection() {
             </div>
           </div>
 
-          {/* Card 2 — fades in */}
+          {/* Card 2 — slides up from bottom */}
           <div
-            className="absolute inset-0 z-20 transition-opacity duration-700"
-            style={{ opacity: showSecond ? 1 : 0 }}
+            className="absolute inset-0 z-20"
+            style={{
+              transform: `translateY(${(1 - slideProgress) * 100}%)`,
+              transition: "transform 0.15s ease-out",
+            }}
           >
             <img
               src="/images/section-after.jpg"
