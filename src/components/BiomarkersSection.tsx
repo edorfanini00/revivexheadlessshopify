@@ -24,7 +24,7 @@ export default function BiomarkersSection() {
 
   return (
     <div className="relative bg-white pt-12 sm:pt-28">
-      <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
+      <div ref={containerRef} className="relative" style={{ height: "350vh" }}>
 
         {/* Single sticky frame — stays pinned the whole time */}
         <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px]">
