@@ -165,17 +165,6 @@ export default async function HomePage() {
       <HomeCTA />
       <BiomarkersSection />
 
-      {/* --- NEW IMAGE SECTION --- */}
-      <div className="relative z-20 bg-white pt-12 sm:pt-28">
-        <div className="relative w-full overflow-hidden rounded-none sm:rounded-[10px]" style={{ minHeight: "100vh" }}>
-          <img
-            src="/images/section-after.jpg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-        </div>
-      </div>
-
     </div>
 
   );
