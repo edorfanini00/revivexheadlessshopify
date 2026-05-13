@@ -3,18 +3,36 @@
 import { useRef, useEffect, useState } from "react";
 
 export default function BiomarkersSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [phase, setPhase] = useState<"before" | "locked" | "after">("before");
   const [showSecond, setShowSecond] = useState(false);
+  const [lockOffset, setLockOffset] = useState(0);
 
   useEffect(() => {
+    const LOCK_DISTANCE = 1500; // pixels of scroll while locked
+
     const onScroll = () => {
-      const el = containerRef.current;
+      const el = sectionRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
-      const totalScroll = el.offsetHeight - window.innerHeight;
-      const progress = Math.max(0, Math.min(1, -rect.top / totalScroll));
-      // Switch at 50% scroll through the container
-      setShowSecond(progress > 0.5);
+      const sectionTop = window.scrollY + rect.top;
+      const scrollY = window.scrollY;
+
+      if (scrollY < sectionTop) {
+        // Haven't reached the section yet
+        setPhase("before");
+        setShowSecond(false);
+      } else if (scrollY < sectionTop + LOCK_DISTANCE) {
+        // Inside the locked zone
+        setPhase("locked");
+        setLockOffset(sectionTop);
+        const progress = (scrollY - sectionTop) / LOCK_DISTANCE;
+        setShowSecond(progress > 0.6);
+      } else {
+        // Past the locked zone
+        setPhase("after");
+        setShowSecond(true);
+      }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -22,14 +40,29 @@ export default function BiomarkersSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The section needs enough height to allow scrolling while "locked"
+  const LOCK_DISTANCE = 1500;
+
   return (
     <div className="relative bg-white pt-12 sm:pt-28">
-      <div ref={containerRef} className="relative" style={{ height: "350vh" }}>
-
-        {/* Single sticky frame — stays pinned the whole time */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px]">
-
-          {/* Card 1 — always behind */}
+      <div
+        ref={sectionRef}
+        style={{ height: `calc(100vh + ${LOCK_DISTANCE}px)` }}
+        className="relative"
+      >
+        {/* The visual frame */}
+        <div
+          className="w-full overflow-hidden rounded-none sm:rounded-[10px]"
+          style={{
+            position: phase === "locked" ? "fixed" : "absolute",
+            top: phase === "locked" ? 0 : phase === "after" ? `${LOCK_DISTANCE}px` : 0,
+            left: 0,
+            right: 0,
+            height: "100vh",
+            zIndex: 30,
+          }}
+        >
+          {/* Card 1 */}
           <img
             src="/images/biomarkers-hero.jpg"
             alt=""
@@ -54,7 +87,7 @@ export default function BiomarkersSection() {
             </div>
           </div>
 
-          {/* Card 2 — fades in over card 1 */}
+          {/* Card 2 — fades in */}
           <div
             className="absolute inset-0 z-20 transition-opacity duration-700"
             style={{ opacity: showSecond ? 1 : 0 }}
@@ -65,7 +98,6 @@ export default function BiomarkersSection() {
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
-
         </div>
       </div>
     </div>
