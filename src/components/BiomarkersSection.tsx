@@ -1,11 +1,35 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+
 export default function BiomarkersSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [showSecond, setShowSecond] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const totalScroll = el.offsetHeight - window.innerHeight;
+      const progress = Math.max(0, Math.min(1, -rect.top / totalScroll));
+      // Switch at 50% scroll through the container
+      setShowSecond(progress > 0.5);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="relative bg-white pt-12 sm:pt-28">
-      {/* Tall scroll container for both cards */}
-      <div className="relative" style={{ height: "300vh" }}>
+      <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
 
-        {/* CARD 1 — pins and stays while you scroll */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px] z-10">
+        {/* Single sticky frame — stays pinned the whole time */}
+        <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px]">
+
+          {/* Card 1 — always behind */}
           <img
             src="/images/biomarkers-hero.jpg"
             alt=""
@@ -14,7 +38,10 @@ export default function BiomarkersSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent sm:bg-gradient-to-l sm:from-black/60 sm:via-black/20 sm:to-transparent" />
 
           <div className="absolute inset-0 z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end">
-            <div className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px]">
+            <div
+              className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px] transition-opacity duration-500"
+              style={{ opacity: showSecond ? 0 : 1 }}
+            >
               <h2
                 className="text-[26px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-4 sm:mb-5"
                 style={{ textShadow: "0 2px 20px rgba(0,0,0,0.3)" }}
@@ -26,17 +53,20 @@ export default function BiomarkersSection() {
               </p>
             </div>
           </div>
-        </div>
 
-        {/* CARD 2 — slides up over card 1 like a new card */}
-        <div className="sticky top-0 h-screen overflow-hidden rounded-none sm:rounded-[10px] z-20">
-          <img
-            src="/images/section-after.jpg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-        </div>
+          {/* Card 2 — fades in over card 1 */}
+          <div
+            className="absolute inset-0 z-20 transition-opacity duration-700"
+            style={{ opacity: showSecond ? 1 : 0 }}
+          >
+            <img
+              src="/images/section-after.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+          </div>
 
+        </div>
       </div>
     </div>
   );
