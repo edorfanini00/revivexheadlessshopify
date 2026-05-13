@@ -5,12 +5,11 @@ import { useRef, useEffect, useState } from "react";
 export default function BiomarkersSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState<"before" | "locked" | "after">("before");
-  const [slideProgress, setSlideProgress] = useState(0); // 0 = card1 visible, 1 = card2 fully slid in
+  const [showSecond, setShowSecond] = useState(false);
 
   useEffect(() => {
     const LOCK_DISTANCE = 1500;
-    const SLIDE_START = 0.4; // start sliding at 40%
-    const SLIDE_END = 0.75;  // fully slid in at 75%
+    const TRIGGER = 0.35; // 35% scroll triggers the switch
 
     const onScroll = () => {
       const el = sectionRef.current;
@@ -21,16 +20,14 @@ export default function BiomarkersSection() {
 
       if (scrollY < sectionTop) {
         setPhase("before");
-        setSlideProgress(0);
+        setShowSecond(false);
       } else if (scrollY < sectionTop + LOCK_DISTANCE) {
         setPhase("locked");
         const progress = (scrollY - sectionTop) / LOCK_DISTANCE;
-        // Map progress from SLIDE_START-SLIDE_END range to 0-1
-        const slide = Math.max(0, Math.min(1, (progress - SLIDE_START) / (SLIDE_END - SLIDE_START)));
-        setSlideProgress(slide);
+        setShowSecond(progress > TRIGGER);
       } else {
         setPhase("after");
-        setSlideProgress(1);
+        setShowSecond(true);
       }
     };
 
@@ -70,7 +67,10 @@ export default function BiomarkersSection() {
           <div className="absolute inset-0 z-10 mx-auto w-full max-w-[1600px] px-5 sm:px-6 lg:px-10 flex items-end sm:items-start justify-start sm:justify-end">
             <div
               className="pb-10 sm:pb-0 sm:pt-[35vh] text-left sm:text-right max-w-[500px]"
-              style={{ opacity: 1 - slideProgress, transition: "opacity 0.15s" }}
+              style={{
+                opacity: showSecond ? 0 : 1,
+                transition: "opacity 0.6s ease",
+              }}
             >
               <h2
                 className="text-[26px] sm:text-[40px] lg:text-[48px] font-medium leading-[1.05] tracking-[-0.03em] text-white mb-4 sm:mb-5"
@@ -84,12 +84,12 @@ export default function BiomarkersSection() {
             </div>
           </div>
 
-          {/* Card 2 — slides up from bottom */}
+          {/* Card 2 — slides in from bottom (down) or card 1 slides in from top (up) */}
           <div
             className="absolute inset-0 z-20"
             style={{
-              transform: `translateY(${(1 - slideProgress) * 100}%)`,
-              transition: "transform 0.15s ease-out",
+              transform: showSecond ? "translateY(0)" : "translateY(100%)",
+              transition: "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <img
