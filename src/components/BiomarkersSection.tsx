@@ -111,7 +111,7 @@ export default function BiomarkersSection() {
             }}
           >
             <img
-              src="/images/section-after.jpg"
+              src="https://ik.imagekit.io/kusosheutk/hf_20260513_030657_77dcd1a9-b00a-4be1-b363-1f541ca42cf6-cloud-wonder-1x.jpg?tr=orig-true"
               alt=""
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
